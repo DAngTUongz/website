@@ -3,160 +3,521 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dang Tuong | Portfolio</title>
+    <title>Dang Tuong | Portfolio</title>
 
-<link rel="stylesheet" href="style.css">
+    <meta name="description"
+        content="Personal portfolio of Dang Tuong - Embedded Systems Developer specializing in STM32, ESP32, Arduino, PLC and Web Development.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="images/favicon.png">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<header>
+    <!-- ========================= -->
+    <!-- Loading Screen -->
+    <!-- ========================= -->
 
-<nav>
+    <div id="loader">
 
-<h2>DangTuong</h2>
+        <h1>DangTuong</h1>
+        <p>Loading Portfolio...</p>
 
-<ul>
+    </div>
 
-<li><a href="#home">Home</a></li>
+    <!-- ========================= -->
+    <!-- Header -->
+    <!-- ========================= -->
 
-<li><a href="#about">About</a></li>
+    <header>
 
-<li><a href="#skills">Skills</a></li>
+        <div class="logo">
+            DangTuong
+        </div>
 
-<li><a href="#projects">Projects</a></li>
+        <nav>
 
-<li><a href="#contact">Contact</a></li>
+            <ul>
 
-</ul>
+                <li><a href="#home">Home</a></li>
 
-</nav>
+                <li><a href="#about">About</a></li>
 
-</header>
+                <li><a href="#skills">Skills</a></li>
 
-<section id="home" class="hero">
+                <li><a href="#projects">Projects</a></li>
 
-<h1>Hello, I'm <span>Dang Tuong</span></h1>
+                <li><a href="#contact">Contact</a></li>
 
-<p>
-Embedded Systems Developer<br>
-STM32 • ESP32 • Arduino • PLC • Web Development
-</p>
+            </ul>
 
-<a href="#projects" class="btn">View My Projects</a>
+        </nav>
 
-</section>
+        <div class="menu-btn">
 
-<section id="about">
+            <i class="fa-solid fa-bars"></i>
 
-<h2>About Me</h2>
+        </div>
 
-<p>
+    </header>
 
-Welcome to my personal portfolio.
+    <!-- ========================= -->
+    <!-- Hero -->
+    <!-- ========================= -->
 
-This website showcases my projects, programming experience, and technologies that I am learning and developing.
+    <section id="home" class="hero">
 
-</p>
+        <div class="hero-left">
 
-</section>
+            <p class="hello">
 
-<section id="skills">
+                Hello, I'm
 
-<h2>Skills</h2>
+            </p>
 
-<div class="cards">
+            <h1>
 
-<div class="card">STM32</div>
+                Dang Tuong
 
-<div class="card">ESP32</div>
+            </h1>
 
-<div class="card">Arduino</div>
+            <h2>
 
-<div class="card">PLC</div>
+                Embedded Systems Developer
 
-<div class="card">C/C++</div>
+            </h2>
 
-<div class="card">HTML</div>
+            <p class="description">
 
-<div class="card">CSS</div>
+                Passionate about Embedded Systems, IoT, PLC, Automation,
+                and Web Development.
 
-<div class="card">JavaScript</div>
+            </p>
 
-<div class="card">Git</div>
+            <div class="tech">
 
-</div>
+                <span>STM32</span>
 
-</section>
+                <span>ESP32</span>
 
-<section id="projects">
+                <span>Arduino</span>
 
-<h2>Projects</h2>
+                <span>PLC</span>
 
-<div class="project-grid">
+                <span>C/C++</span>
 
-<div class="project">
+                <span>HTML</span>
 
-<h3>Temperature Controller</h3>
+                <span>CSS</span>
 
-<p>STM32 temperature controller with LCD and EEPROM.</p>
+                <span>JavaScript</span>
 
-</div>
+            </div>
 
-<div class="project">
+            <div class="buttons">
 
-<h3>ESP32 Smart Home</h3>
+                <a href="#projects" class="btn">
 
-<p>ESP32 WiFi control system using Google Sheets.</p>
+                    View Projects
 
-</div>
+                </a>
 
-<div class="project">
+                <a href="https://github.com/DangTuongz"
+                    target="_blank"
+                    class="btn-outline">
 
-<h3>Minecraft Server</h3>
+                    GitHub
 
-<p>PaperMC server configuration and management.</p>
+                </a>
 
-</div>
+            </div>
 
-<div class="project">
+        </div>
 
-<h3>Legacy Launcher Guide</h3>
+        <div class="hero-right">
 
-<p>Tutorial website and YouTube content.</p>
+            <img src="images/avatar.png"
+                alt="Dang Tuong">
 
-</div>
+        </div>
 
-</div>
+    </section>
 
-</section>
+    <!-- ========================= -->
+    <!-- About -->
+    <!-- ========================= -->
 
-<section id="contact">
+    <section id="about">
 
-<h2>Contact</h2>
+        <div class="section-title">
 
-<p>Email : dangtuong701@email.com</p>
+            <h2>
 
-<p>GitHub : github.com/DAngTUongz</p>
+                About Me
 
-</section>
+            </h2>
 
-<footer>
+        </div>
 
-<p>© 2026 Dang Tuong. All Rights Reserved.</p>
+        <div class="about-content">
 
-</footer>
+            <p>
 
-<script src="script.js"></script>
+                Welcome to my portfolio website.
+
+            </p>
+
+            <p>
+
+                I enjoy building embedded systems, automation solutions,
+                and web applications.
+
+            </p>
+
+            <p>
+
+                Most of my projects involve STM32, ESP32, Arduino,
+                PLC programming, communication protocols,
+                and modern web technologies.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Skills -->
+    <!-- ========================= -->
+
+    <section id="skills">
+
+        <div class="section-title">
+
+            <h2>
+
+                Skills
+
+            </h2>
+
+        </div>
+
+        <div class="skills-container">
+
+            <div class="skill">
+
+                <span>STM32</span>
+
+                <div class="progress">
+
+                    <div class="bar stm32"></div>
+
+                </div>
+
+            </div>
+
+            <div class="skill">
+
+                <span>ESP32</span>
+
+                <div class="progress">
+
+                    <div class="bar esp32"></div>
+
+                </div>
+
+            </div>
+
+            <div class="skill">
+
+                <span>Arduino</span>
+
+                <div class="progress">
+
+                    <div class="bar arduino"></div>
+
+                </div>
+
+            </div>
+
+            <div class="skill">
+
+                <span>PLC</span>
+
+                <div class="progress">
+
+                    <div class="bar plc"></div>
+
+                </div>
+
+            </div>
+
+            <div class="skill">
+
+                <span>HTML / CSS</span>
+
+                <div class="progress">
+
+                    <div class="bar html"></div>
+
+                </div>
+
+            </div>
+
+            <div class="skill">
+
+                <span>JavaScript</span>
+
+                <div class="progress">
+
+                    <div class="bar js"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Projects -->
+    <!-- ========================= -->
+
+    <section id="projects">
+
+        <div class="section-title">
+
+            <h2>
+
+                Projects
+
+            </h2>
+
+        </div>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+
+                <img src="images/project1.png">
+
+                <h3>
+
+                    Temperature Controller
+
+                </h3>
+
+                <p>
+
+                    STM32 + LCD + EEPROM
+
+                </p>
+
+            </div>
+
+            <div class="project-card">
+
+                <img src="images/project2.png">
+
+                <h3>
+
+                    ESP32 Smart Home
+
+                </h3>
+
+                <p>
+
+                    IoT + WiFi + Google Sheets
+
+                </p>
+
+            </div>
+
+            <div class="project-card">
+
+                <img src="images/project3.png">
+
+                <h3>
+
+                    Minecraft Server
+
+                </h3>
+
+                <p>
+
+                    PaperMC + Plugins
+
+                </p>
+
+            </div>
+
+            <div class="project-card">
+
+                <img src="images/project4.png">
+
+                <h3>
+
+                    Legacy Launcher Guide
+
+                </h3>
+
+                <p>
+
+                    Tutorial Website
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Statistics -->
+    <!-- ========================= -->
+
+    <section id="stats">
+
+        <div class="stat">
+
+            <h2>
+
+                20+
+
+            </h2>
+
+            <p>
+
+                Projects
+
+            </p>
+
+        </div>
+
+        <div class="stat">
+
+            <h2>
+
+                5+
+
+            </h2>
+
+            <p>
+
+                Technologies
+
+            </p>
+
+        </div>
+
+        <div class="stat">
+
+            <h2>
+
+                ∞
+
+            </h2>
+
+            <p>
+
+                Learning
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Contact -->
+    <!-- ========================= -->
+
+    <section id="contact">
+
+        <div class="section-title">
+
+            <h2>
+
+                Contact
+
+            </h2>
+
+        </div>
+
+        <div class="contact-icons">
+
+            <a href="https://github.com/DangTuongz">
+
+                <i class="fab fa-github"></i>
+
+            </a>
+
+            <!-- <a href="#">
+
+                <i class="fab fa-youtube"></i>
+
+            </a>
+
+            <a href="#">
+
+                <i class="fab fa-facebook"></i>
+
+            </a> -->
+
+            <a href="mailto:dangtuong701@email.com">
+
+                <i class="fa-solid fa-envelope"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Footer -->
+    <!-- ========================= -->
+
+    <footer>
+
+        <p>
+
+            © 2026 Dang Tuong. All Rights Reserved.
+
+        </p>
+
+    </footer>
+
+    <!-- Back To Top -->
+
+    <button id="topBtn">
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </button>
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
 
 </body>
 
