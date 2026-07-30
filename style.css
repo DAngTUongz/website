@@ -867,6 +867,44 @@ nav a:hover::after{
 
 }
 
+.contact-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.05);
+
+    margin-top:20px;
+
+}
+
+.contact-card i{
+
+    font-size:30px;
+
+    color:#38bdf8;
+
+}
+
+.contact-card h3{
+
+    margin-bottom:5px;
+
+}
+
+.contact-card p{
+
+    color:#94a3b8;
+
+}
+
 
 /* =====================================================
    FOOTER
