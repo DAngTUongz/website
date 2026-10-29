@@ -98,6 +98,16 @@ function applyLanguage(language) {
   const selector = document.getElementById('languageSelect');
   if (selector && selector.value !== language) selector.value = language;
   try { localStorage.setItem('portfolioLanguage', language); } catch (e) {}
+   setText('.language-label', t.language_label);
+   
+   const selector = document.getElementById('languageSelect');
+   if (selector && selector.value !== language) {
+       selector.value = language;
+   }
+   
+   try {
+       localStorage.setItem('portfolioLanguage', language);
+   } catch (e) {}
 }
 
 // Loading screen
@@ -211,17 +221,13 @@ console.log('%cWelcome to DangTuong Portfolio', 'color:#18181b;font-size:18px;fo
    CUSTOM LANGUAGE DROPDOWN
 ========================================= */
 
-const languageSwitcher =
-    document.getElementById("languageSwitcher");
+const languageSwitcher = document.getElementById("languageSwitcher");
 
-const languageToggle =
-    document.getElementById("languageToggle");
+const languageToggle = document.getElementById("languageToggle");
 
-const languageMenu =
-    document.getElementById("languageMenu");
+const languageMenu = document.getElementById("languageMenu");
 
-const selectedLanguage =
-    document.getElementById("selectedLanguage");
+const selectedLanguage = document.getElementById("selectedLanguage");
 
 if (
     languageSwitcher &&
