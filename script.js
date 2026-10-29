@@ -1,359 +1,204 @@
 /* ==========================================================
-   Portfolio V2
-   script.js
+   DangTuong Portfolio - Multilingual + existing interactions
+   Languages: Vietnamese (vi), English (en), Traditional Chinese (zh)
 ========================================================== */
 
-window.addEventListener("load", () => {
+const translations = {
+  en: {
+    loaderTitle: 'DangTuong', loaderText: 'Loading Portfolio...',
+    nav: ['Home', 'About', 'Skills', 'Projects', 'Contact'],
+    hello: "Hello, I'm", role: 'Embedded Systems Developer',
+    description: 'Passionate about Embedded Systems, IoT, PLC, Automation, and Web Development.',
+    projectsButton: 'View Projects', aboutTitle: 'About Me',
+    about: [
+      'Welcome to my portfolio website.',
+      'I enjoy building embedded systems, automation solutions, and web applications.',
+      'Most of my projects involve STM32, ESP32, Arduino, PLC programming, communication protocols, and modern web technologies.'
+    ],
+    skillsTitle: 'Skills', projectsTitle: 'Projects',
+    projectNames: ['Temperature Controller', 'ESP32 Smart Home', 'Minecraft Server', 'Legacy Launcher Guide'],
+    projectDescriptions: ['STM32 + LCD + EEPROM', 'IoT + WiFi + Google Sheets', 'PaperMC + Plugins', 'Tutorial Website'],
+    stats: ['Projects', 'Technologies', 'Learning'], contactTitle: 'Contact', emailTitle: 'Email',
+    footer: '© 2026 DangTuong. All Rights Reserved.', languageLabel: 'Language'
+  },
+  vi: {
+    loaderTitle: 'DangTuong', loaderText: 'Đang tải Portfolio...',
+    nav: ['Trang chủ', 'Giới thiệu', 'Kỹ năng', 'Dự án', 'Liên hệ'],
+    hello: 'Xin chào, tôi là', role: 'Lập trình viên hệ thống nhúng',
+    description: 'Đam mê hệ thống nhúng, IoT, PLC, tự động hóa và phát triển web.',
+    projectsButton: 'Xem dự án', aboutTitle: 'Giới thiệu',
+    about: [
+      'Chào mừng bạn đến với website portfolio của tôi.',
+      'Tôi yêu thích phát triển hệ thống nhúng, giải pháp tự động hóa và ứng dụng web.',
+      'Các dự án của tôi chủ yếu liên quan đến STM32, ESP32, Arduino, lập trình PLC, giao thức truyền thông và công nghệ web hiện đại.'
+    ],
+    skillsTitle: 'Kỹ năng', projectsTitle: 'Dự án',
+    projectNames: ['Bộ điều khiển nhiệt độ', 'Nhà thông minh ESP32', 'Máy chủ Minecraft', 'Hướng dẫn Legacy Launcher'],
+    projectDescriptions: ['STM32 + LCD + EEPROM', 'IoT + WiFi + Google Sheets', 'PaperMC + Plugin', 'Website hướng dẫn'],
+    stats: ['Dự án', 'Công nghệ', 'Học hỏi'], contactTitle: 'Liên hệ', emailTitle: 'Email',
+    footer: '© 2026 DangTuong. Bảo lưu mọi quyền.', languageLabel: 'Ngôn ngữ'
+  },
+  zh: {
+    loaderTitle: 'DangTuong', loaderText: '作品集載入中...',
+    nav: ['首頁', '關於我', '技能', '專案', '聯絡我'],
+    hello: '你好，我是', role: '嵌入式系統開發者',
+    description: '熱衷於嵌入式系統、物聯網、PLC、自動化與網頁開發。',
+    projectsButton: '查看專案', aboutTitle: '關於我',
+    about: [
+      '歡迎來到我的個人作品集網站。',
+      '我喜歡開發嵌入式系統、自動化解決方案與網頁應用程式。',
+      '我的專案主要涉及 STM32、ESP32、Arduino、PLC 程式設計、通訊協定與現代網頁技術。'
+    ],
+    skillsTitle: '技能', projectsTitle: '專案',
+    projectNames: ['溫度控制器', 'ESP32 智慧家庭', 'Minecraft 伺服器', 'Legacy Launcher 教學'],
+    projectDescriptions: ['STM32 + LCD + EEPROM', '物聯網 + WiFi + Google 試算表', 'PaperMC + 外掛', '教學網站'],
+    stats: ['專案', '技術', '持續學習'], contactTitle: '聯絡我', emailTitle: '電子郵件',
+    footer: '© 2026 DangTuong。保留所有權利。', languageLabel: '語言'
+  }
+};
 
-    const loader = document.getElementById("loader");
+function setText(selector, value) {
+  const el = document.querySelector(selector);
+  if (el) el.textContent = value;
+}
+function setTexts(selector, values) {
+  document.querySelectorAll(selector).forEach((el, i) => {
+    if (values[i] !== undefined) el.textContent = values[i];
+  });
+}
 
-    loader.style.opacity = "0";
+function applyLanguage(language) {
+  const t = translations[language] || translations.en;
+  document.documentElement.lang = language === 'zh' ? 'zh-Hant' : language;
+  setText('#loader h1', t.loaderTitle);
+  setText('#loader p', t.loaderText);
+  setTexts('nav ul li a', t.nav);
+  setText('.hero .hello', t.hello);
+  setText('.hero h1', 'Dang Tuong');
+  setText('.hero h2', t.role);
+  setText('.hero .description', t.description);
+  setText('.hero .buttons .btn', t.projectsButton);
 
-    setTimeout(() => {
+  const sectionTitles = document.querySelectorAll('.section-title h2');
+  if (sectionTitles[0]) sectionTitles[0].textContent = t.aboutTitle;
+  if (sectionTitles[1]) sectionTitles[1].textContent = t.skillsTitle;
+  if (sectionTitles[2]) sectionTitles[2].textContent = t.projectsTitle;
+  if (sectionTitles[3]) sectionTitles[3].textContent = t.contactTitle;
 
-        loader.style.display = "none";
+  setTexts('#about .about-content p', t.about);
+  setTexts('.project-card h3', t.projectNames);
+  setTexts('.project-card p', t.projectDescriptions);
+  setTexts('#stats .stat p', t.stats);
+  setText('.contact-card h3', t.emailTitle);
+  setText('footer p', t.footer);
 
-    }, 800);
+  const selector = document.getElementById('languageSelect');
+  if (selector && selector.value !== language) selector.value = language;
+  try { localStorage.setItem('portfolioLanguage', language); } catch (e) {}
+}
 
+// Loading screen
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loader');
+  if (!loader) return;
+  loader.style.opacity = '0';
+  setTimeout(() => { loader.style.display = 'none'; }, 800);
 });
 
+// Language selector
+const languageSelect = document.getElementById('languageSelect');
+if (languageSelect) {
+  languageSelect.addEventListener('change', () => applyLanguage(languageSelect.value));
+}
+let savedLanguage = 'en';
+try { savedLanguage = localStorage.getItem('portfolioLanguage') || 'en'; } catch (e) {}
+applyLanguage(savedLanguage);
 
-/* ==========================================================
-   Mobile Menu
-========================================================== */
+// Mobile menu
+const menuBtn = document.querySelector('.menu-btn');
+const nav = document.querySelector('nav');
+if (menuBtn && nav) {
+  menuBtn.addEventListener('click', () => nav.classList.toggle('active'));
+  document.querySelectorAll('nav a').forEach(link => link.addEventListener('click', () => nav.classList.remove('active')));
+}
 
-const menuBtn = document.querySelector(".menu-btn");
+// Header appearance
+const header = document.querySelector('header');
+function updateHeader() {
+  if (!header) return;
+  header.style.background = window.scrollY > 50 ? 'rgba(255,255,255,.97)' : 'rgba(255,255,255,.94)';
+  header.style.boxShadow = window.scrollY > 50 ? '0 4px 20px rgba(0,0,0,.04)' : 'none';
+}
+window.addEventListener('scroll', updateHeader);
+updateHeader();
 
-const nav = document.querySelector("nav");
-
-menuBtn.addEventListener("click", () => {
-
-    nav.classList.toggle("active");
-
+// Back to top
+const topBtn = document.getElementById('topBtn');
+window.addEventListener('scroll', () => {
+  if (topBtn) topBtn.style.display = window.scrollY > 500 ? 'block' : 'none';
 });
+if (topBtn) topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
+// Scroll reveal
+const sections = document.querySelectorAll('section');
+if ('IntersectionObserver' in window) {
+  sections.forEach(el => el.classList.add('hidden'));
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
+  }, { threshold: 0.15 });
+  sections.forEach(el => observer.observe(el));
 
-/* ==========================================================
-   Close menu after click
-========================================================== */
-
-document.querySelectorAll("nav a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        nav.classList.remove("active");
-
-    });
-
-});
-
-
-/* ==========================================================
-   Header Background - Minimal Light Theme
-========================================================== */
-
-const header = document.querySelector("header");
-
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-        header.style.background = "rgba(255, 255, 255, 0.96)";
-        header.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.04)";
-    } else {
-        header.style.background = "rgba(255, 255, 255, 0.94)";
-        header.style.boxShadow = "none";
-    }
-});
-
-
-/* ==========================================================
-   Back To Top
-========================================================== */
-
-const topBtn = document.getElementById("topBtn");
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 500) {
-
-        topBtn.style.display = "block";
-
-    }
-
-    else {
-
-        topBtn.style.display = "none";
-
-    }
-
-});
-
-topBtn.addEventListener("click", () => {
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
-
-});
-
-
-/* ==========================================================
-   Scroll Reveal
-========================================================== */
-
-const hiddenElements = document.querySelectorAll("section");
-
-hiddenElements.forEach(el => {
-
-    el.classList.add("hidden");
-
-});
-
-const observer = new IntersectionObserver(entries => {
-
+  // Animate skill bars when visible
+  const skillObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("show");
-
-        }
-
+      if (entry.isIntersecting) {
+        entry.target.classList.add('bar-animated');
+        skillObserver.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.bar').forEach(bar => skillObserver.observe(bar));
 
-},{
-    threshold:.2
-});
-
-hiddenElements.forEach(el=>{
-
-    observer.observe(el);
-
-});
-
-
-/* ==========================================================
-   Active Menu
-========================================================== */
-
-const sections = document.querySelectorAll("section");
-
-const navLinks = document.querySelectorAll("nav ul li a");
-
-window.addEventListener("scroll",()=>{
-
-    let current = "";
-
-    sections.forEach(section=>{
-
-        const sectionTop = section.offsetTop - 150;
-
-        if(window.scrollY >= sectionTop){
-
-            current = section.getAttribute("id");
-
-        }
-
+  // Animate numeric counters once
+  const counterObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const counter = entry.target;
+      const original = counter.textContent;
+      const number = parseInt(original, 10);
+      if (Number.isNaN(number)) { counterObserver.unobserve(counter); return; }
+      let count = 0;
+      const step = Math.max(1, Math.ceil(number / 60));
+      const update = () => {
+        count = Math.min(number, count + step);
+        counter.textContent = count + '+';
+        if (count < number) requestAnimationFrame(update);
+        else counter.textContent = original;
+      };
+      update();
+      counterObserver.unobserve(counter);
     });
-
-    navLinks.forEach(link=>{
-
-        link.classList.remove("active");
-
-        if(link.getAttribute("href")=="#"+current){
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-});
-
-
-/* ==========================================================
-   Progress Bar Animation
-========================================================== */
-
-const bars = document.querySelectorAll(".bar");
-
-const skillObserver = new IntersectionObserver(entries=>{
-
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-            entry.target.style.animation="growBar 2s forwards";
-
-        }
-
-    });
-
-},{
-    threshold:.5
-});
-
-bars.forEach(bar=>{
-
-    skillObserver.observe(bar);
-
-});
-
-
-/* ==========================================================
-   Counter Animation
-========================================================== */
-
-const counters = document.querySelectorAll(".stat h2");
-
-const speed = 60;
-
-const counterObserver = new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-const counter = entry.target;
-
-const text = counter.innerText;
-
-const number = parseInt(text);
-
-if(isNaN(number)) return;
-
-let count = 0;
-
-const update = ()=>{
-
-count += Math.ceil(number/speed);
-
-if(count<number){
-
-counter.innerText = count+"+";
-
-requestAnimationFrame(update);
-
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stat h2').forEach(counter => counterObserver.observe(counter));
 }
 
-else{
-
-counter.innerText=text;
-
+// Avatar tilt (desktop pointer only)
+const avatar = document.querySelector('.hero-right img');
+if (avatar && window.matchMedia('(hover: hover)').matches) {
+  avatar.addEventListener('mousemove', e => {
+    const rect = avatar.getBoundingClientRect();
+    const rotateY = ((e.clientX - rect.left) / rect.width - 0.5) * 10;
+    const rotateX = ((e.clientY - rect.top) / rect.height - 0.5) * -10;
+    avatar.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+  });
+  avatar.addEventListener('mouseleave', () => { avatar.style.transform = ''; });
 }
 
-}
-
-update();
-
-}
-
+// Subtle project-card hover
+ document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('mouseenter', () => { card.style.boxShadow = '0 14px 35px rgba(0,0,0,.08)'; });
+  card.addEventListener('mouseleave', () => { card.style.boxShadow = ''; });
 });
 
-},{
-threshold:.5
-});
-
-counters.forEach(counter=>{
-
-counterObserver.observe(counter);
-
-});
-
-
-/* ==========================================================
-   Avatar Hover
-========================================================== */
-
-const avatar = document.querySelector(".hero-right img");
-
-if(avatar){
-
-avatar.addEventListener("mousemove",(e)=>{
-
-const rect = avatar.getBoundingClientRect();
-
-const x = e.clientX - rect.left;
-
-const y = e.clientY - rect.top;
-
-const rotateY = ((x/rect.width)-0.5)*18;
-
-const rotateX = ((y/rect.height)-0.5)*-18;
-
-avatar.style.transform=`
-perspective(800px)
-rotateX(${rotateX}deg)
-rotateY(${rotateY}deg)
-scale(1.05)
-`;
-
-});
-
-avatar.addEventListener("mouseleave",()=>{
-
-avatar.style.transform="rotateX(0) rotateY(0) scale(1)";
-
-});
-
-}
-
-
-/* ==========================================================
-   Project Card Hover
-========================================================== */
-
-document.querySelectorAll(".project-card").forEach(card=>{
-
-card.addEventListener("mouseenter",()=>{
-
-card.style.boxShadow="0 20px 45px rgba(56,189,248,.35)";
-
-});
-
-card.addEventListener("mouseleave",()=>{
-
-card.style.boxShadow="";
-
-});
-
-});
-
-
-/* ==========================================================
-   Tech Tag Animation
-========================================================== */
-
-document.querySelectorAll(".tech span").forEach(tag=>{
-
-tag.addEventListener("mouseenter",()=>{
-
-tag.style.transform="translateY(-6px) scale(1.08)";
-
-});
-
-tag.addEventListener("mouseleave",()=>{
-
-tag.style.transform="translateY(0) scale(1)";
-
-});
-
-});
-
-
-/* ==========================================================
-   Smooth Fade
-========================================================== */
-
-document.body.classList.add("fade");
-
-
-/* ==========================================================
-   Console Message
-========================================================== */
-
-console.log("%cWelcome to DangTuong Portfolio",
-"color:#38bdf8;font-size:18px;font-weight:bold;");
+document.body.classList.add('fade');
+console.log('%cWelcome to DangTuong Portfolio', 'color:#18181b;font-size:18px;font-weight:bold;');
