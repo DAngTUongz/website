@@ -302,6 +302,21 @@ const projects = [
     image: "assets/projects/agv-2w.JPG",
     link: "projects/agv-2w.html"
   },
+   {
+       title: {
+           vi: "AGV 2E",
+           en: "AGV 2E",
+           zh: "AGV 2E"
+       },
+       description: {
+           vi: "Thiết kế hệ thống điện và phát triển điều khiển cho robot AGV 2E.",
+           en: "Electrical system design and control development for an AGV 2E robot.",
+           zh: "AGV 2E 機器人的電氣系統設計與控制開發。"
+       },
+       image: "assets/projects/agv-2e.JPG",
+       link: "projects/agv-2e.html",
+       tags: ["AGV", "Electrical Design", "Motor Control"]
+   },
   {
     title: {
       vi: "Robot SCARA",
