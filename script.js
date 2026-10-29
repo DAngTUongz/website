@@ -5,6 +5,7 @@
 
 const translations = {
   en: {
+    language_label: "Language",
     loaderTitle: 'DangTuong', loaderText: 'Loading Portfolio...',
     nav: ['Home', 'About', 'Skills', 'Projects', 'Contact'],
     hello: "Hello, I'm", role: 'Embedded Systems Developer',
@@ -22,6 +23,7 @@ const translations = {
     footer: '© 2026 DangTuong. All Rights Reserved.', languageLabel: 'Language'
   },
   vi: {
+    language_label: "Ngôn ngữ",
     loaderTitle: 'DangTuong', loaderText: 'Đang tải Portfolio...',
     nav: ['Trang chủ', 'Giới thiệu', 'Kỹ năng', 'Dự án', 'Liên hệ'],
     hello: 'Xin chào, tôi là', role: 'Lập trình viên hệ thống nhúng',
@@ -39,6 +41,7 @@ const translations = {
     footer: '© 2026 DangTuong. Bảo lưu mọi quyền.', languageLabel: 'Ngôn ngữ'
   },
   zh: {
+    language_label: "語言",
     loaderTitle: 'DangTuong', loaderText: '作品集載入中...',
     nav: ['首頁', '關於我', '技能', '專案', '聯絡我'],
     hello: '你好，我是', role: '嵌入式系統開發者',
