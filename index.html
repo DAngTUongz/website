@@ -70,15 +70,52 @@
 
         </nav>
         
-        <div class="language-switcher">
-            <label for="languageSelect">Language</label>
-            <select id="languageSelect"
-                    aria-label="Select website language">
+        
+        <div class="language-switcher" id="languageSwitcher">
+        
+            <span class="language-label">Language</span>
+        
+            <button
+                type="button"
+                class="language-toggle"
+                id="languageToggle"
+                aria-expanded="false"
+                aria-haspopup="listbox">
+        
+                <span id="selectedLanguage">English</span>
+                <i class="fa-solid fa-chevron-down"></i>
+        
+            </button>
+        
+            <div class="language-menu" id="languageMenu" role="listbox">
+        
+                <button type="button" class="language-option active"
+                        data-lang="en" role="option">
+                    English
+                </button>
+        
+                <button type="button" class="language-option"
+                        data-lang="vi" role="option">
+                    Tiếng Việt
+                </button>
+        
+                <button type="button" class="language-option"
+                        data-lang="zh" role="option">
+                    繁體中文
+                </button>
+        
+            </div>
+        
+            <!-- Giữ select để tương thích với code dịch hiện tại -->
+            <select id="languageSelect" class="language-native-select"
+                    aria-label="Select website language" tabindex="-1">
                 <option value="en">English</option>
                 <option value="vi">Tiếng Việt</option>
                 <option value="zh">繁體中文</option>
             </select>
+        
         </div>
+
 
         <div class="menu-btn">
 
