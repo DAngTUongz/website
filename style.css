@@ -1031,6 +1031,14 @@ body {
 }
 
 @media (max-width: 760px) {
+   .menu-toggle {
+        position: absolute;
+        top: 24px;
+        right: 20px;
+        left: auto;
+        margin: 0;
+    }
+   
   .projects-section {
     padding: 70px 20px;
   }
