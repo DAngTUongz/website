@@ -220,9 +220,6 @@ const languageMenu =
 const selectedLanguage =
     document.getElementById("selectedLanguage");
 
-const languageSelect =
-    document.getElementById("languageSelect");
-
 if (
     languageSwitcher &&
     languageToggle &&
@@ -237,7 +234,7 @@ if (
     const languageNames = {
         en: "English",
         vi: "Tiếng Việt",
-        zh: "繁體中文"
+        zh: "中文"
     };
 
     function closeLanguageMenu() {
