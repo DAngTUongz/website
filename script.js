@@ -22,10 +22,13 @@ const translations = {
       phoneValue: 'Update phone number',
       footerRole: 'Embedded Systems Developer',
       about: [
-      'Welcome to my portfolio website.',
-      'I enjoy building embedded systems, automation solutions, and web applications.',
-      'Most of my projects involve STM32, ESP32, Arduino, PLC programming, communication protocols, and modern web technologies.'
-    ],
+       'Hello! I am Dang Ngoc Tuong, passionate about embedded systems, robotics, automatic control, and industrial electronics.',
+       'From 2023 to 2026, I participated in robotics and automation projects, including four-wheel AGVs, two-wheel AGVs, a bidirectional two-wheel AGV, SCARA robots, and Techman robots. My responsibilities involved electrical system design, control programming, and hardware integration.',
+       'In embedded systems, I have hands-on experience with STM32F1, STM32F4, and STM32H7 microcontroller families, as well as ESP32, ESP32-S3, and Arduino platforms. I have used STM32CubeIDE, STM32 HAL, and Arduino IDE to develop applications involving sensor acquisition, data processing, PWM control, motors, encoders, and peripheral communication.',
+       'In industrial automation, I have worked with Mitsubishi FX1N, FX3U, and FX5U PLCs, including control programming and pulse generation for stepper motors and servos. I have also worked with or explored communication protocols such as UART, SPI, I2C, RS485, Modbus RTU, Modbus TCP, and industrial device communication.',
+       'I have also developed IoT applications, collected sensor data, connected ESP32 to Ethernet through the W5500 module, and worked with IMU, RFID, DS18B20 sensors, SPI Flash memory, and SD cards. Additionally, I have experience developing web applications using HTML, CSS, and JavaScript.',
+       'In 2025, my team won First Prize in the Electrical Cabinet Design and Assembly Competition organized by the Faculty of Mechatronics and Electronics at Lac Hong University. I aim to further develop my expertise in embedded systems, control programming, and industrial robotics while contributing to practical and reliable engineering solutions.'
+     ],
     skillsTitle: 'Skills', projectsTitle: 'Projects',
     projectNames: ['Temperature Controller', 'ESP32 Smart Home', 'Minecraft Server', 'Legacy Launcher Guide'],
     projectDescriptions: ['STM32 + LCD + EEPROM', 'IoT + WiFi + Google Sheets', 'PaperMC + Plugins', 'Tutorial Website'],
@@ -50,10 +53,13 @@ const translations = {
       phoneValue: 'Cập nhật số điện thoại',
       footerRole: 'Lập trình viên hệ thống nhúng',
       about: [
-      'Chào mừng bạn đến với website portfolio của tôi.',
-      'Tôi yêu thích phát triển hệ thống nhúng, giải pháp tự động hóa và ứng dụng web.',
-      'Các dự án của tôi chủ yếu liên quan đến STM32, ESP32, Arduino, lập trình PLC, giao thức truyền thông và công nghệ web hiện đại.'
-    ],
+       'Xin chào! Tôi là Đặng Ngọc Tưởng, có niềm đam mê với hệ thống nhúng, robot, điều khiển tự động và điện tử công nghiệp.',
+       'Từ năm 2023 đến 2026, tôi đã tham gia các dự án robot và tự động hóa, bao gồm xe tự hành AGV 4 bánh, AGV 2 bánh, AGV 2 bánh có khả năng di chuyển hai chiều, robot SCARA và robot Techman. Tôi đảm nhiệm các công việc liên quan đến thiết kế hệ thống điện, lập trình điều khiển và tích hợp phần cứng.',
+       'Về hệ thống nhúng, tôi đã thực hành với các dòng vi điều khiển STM32F1, STM32F4 và STM32H7, cùng ESP32, ESP32-S3 và Arduino. Tôi có kinh nghiệm lập trình với STM32CubeIDE, STM32 HAL và Arduino IDE, phát triển các ứng dụng đọc cảm biến, xử lý dữ liệu, điều khiển PWM, động cơ, encoder và giao tiếp với các thiết bị ngoại vi.',
+       'Về tự động hóa công nghiệp, tôi đã làm việc với PLC Mitsubishi FX1N, FX3U và FX5U, lập trình điều khiển, phát xung điều khiển động cơ bước và servo, đồng thời tìm hiểu các giao thức truyền thông như UART, SPI, I2C, RS485, Modbus RTU, Modbus TCP và giao tiếp với thiết bị công nghiệp.',
+       'Ngoài ra, tôi đã thực hiện các ứng dụng IoT, thu thập dữ liệu cảm biến, kết nối ESP32 với Ethernet W5500, làm việc với cảm biến IMU, RFID, DS18B20, bộ nhớ SPI Flash và thẻ SD. Tôi cũng có kinh nghiệm phát triển ứng dụng web bằng HTML, CSS và JavaScript.',
+       'Năm 2025, tôi cùng đội thi đạt giải Nhất tại cuộc thi Thiết kế và Lắp ráp Tủ điện do Khoa Cơ Điện - Điện Tử, Trường Đại học Lạc Hồng tổ chức. Tôi mong muốn tiếp tục phát triển chuyên môn về hệ thống nhúng, lập trình điều khiển và robot công nghiệp, đồng thời tạo ra những giải pháp kỹ thuật có tính ứng dụng cao.'
+     ],
     skillsTitle: 'Kỹ năng', projectsTitle: 'Dự án',
     projectNames: ['Bộ điều khiển nhiệt độ', 'Nhà thông minh ESP32', 'Máy chủ Minecraft', 'Hướng dẫn Legacy Launcher'],
     projectDescriptions: ['STM32 + LCD + EEPROM', 'IoT + WiFi + Google Sheets', 'PaperMC + Plugin', 'Website hướng dẫn'],
@@ -77,10 +83,13 @@ const translations = {
       phoneValue: '請更新電話號碼',
       footerRole: '嵌入式系統開發者',
       about: [
-      '歡迎來到我的個人作品集網站。',
-      '我喜歡開發嵌入式系統、自動化解決方案與網頁應用程式。',
-      '我的專案主要涉及 STM32、ESP32、Arduino、PLC 程式設計、通訊協定與現代網頁技術。'
-    ],
+       '您好！我叫鄧玉祥（Dang Ngoc Tuong），熱衷於嵌入式系統、機器人、自動控制及工業電子技術。',
+       '從 2023 年至 2026 年，我參與了多項機器人與自動化專案，包括四輪自動導引車（AGV）、雙輪 AGV、具備雙向行駛能力的雙輪 AGV、SCARA 機器人及 Techman 機器人。我的工作內容包括電氣系統設計、控制程式開發及硬體整合。',
+       '在嵌入式系統方面，我曾實作 STM32F1、STM32F4、STM32H7 系列微控制器，以及 ESP32、ESP32-S3 和 Arduino 平台。我使用 STM32CubeIDE、STM32 HAL 與 Arduino IDE 開發應用程式，涉及感測器資料擷取、資料處理、PWM 控制、馬達控制、編碼器及周邊裝置通訊。',
+       '在工業自動化方面，我曾使用 Mitsubishi FX1N、FX3U 和 FX5U PLC，進行控制程式開發，以及步進馬達與伺服馬達的脈衝控制。我也曾實作或研究 UART、SPI、I2C、RS485、Modbus RTU、Modbus TCP 等通訊協定，以及工業設備通訊。',
+       '此外，我也開發過物聯網（IoT）應用、感測器資料收集系統，並使用 W5500 乙太網路模組連接 ESP32。我曾接觸 IMU、RFID、DS18B20 感測器、SPI Flash 記憶體及 SD 卡，也具備使用 HTML、CSS 與 JavaScript 開發網頁應用程式的經驗。',
+       '2025 年，我與團隊參加由藍紅大學機電與電子學院舉辦的電控箱設計與組裝競賽，並獲得第一名。我期望持續精進嵌入式系統、控制程式設計及工業機器人領域的專業能力，並致力於開發實用且可靠的工程解決方案。'
+     ],
     skillsTitle: '技能', projectsTitle: '專案',
     projectNames: ['溫度控制器', 'ESP32 智慧家庭', 'Minecraft 伺服器', 'Legacy Launcher 教學'],
     projectDescriptions: ['STM32 + LCD + EEPROM', '物聯網 + WiFi + Google 試算表', 'PaperMC + 外掛', '教學網站'],
