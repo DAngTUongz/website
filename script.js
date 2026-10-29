@@ -49,29 +49,19 @@ document.querySelectorAll("nav a").forEach(link => {
 
 
 /* ==========================================================
-   Header Background
+   Header Background - Minimal Light Theme
 ========================================================== */
 
 const header = document.querySelector("header");
 
 window.addEventListener("scroll", () => {
-
     if (window.scrollY > 50) {
-
-        header.style.background = "rgba(15,23,42,.9)";
-
-        header.style.boxShadow = "0 5px 25px rgba(0,0,0,.25)";
-
-    }
-
-    else {
-
-        header.style.background = "rgba(15,23,42,.45)";
-
+        header.style.background = "rgba(255, 255, 255, 0.96)";
+        header.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.04)";
+    } else {
+        header.style.background = "rgba(255, 255, 255, 0.94)";
         header.style.boxShadow = "none";
-
     }
-
 });
 
 
