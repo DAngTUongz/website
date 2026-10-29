@@ -284,7 +284,7 @@ const projects = [
       zh: "參與團隊自主設計的四輪自動導引車專案，負責電氣系統與運動控制相關工作。"
     },
     tags: ["AGV", "Embedded Systems", "Motor Control"],
-    image: "assets/projects/agv-4w.jpg",
+    image: "assets/projects/agv-4w.JPG",
     link: "projects/agv-4w.html"
   },
   {
