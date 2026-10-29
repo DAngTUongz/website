@@ -95,19 +95,23 @@ function applyLanguage(language) {
   setText('.contact-card h3', t.emailTitle);
   setText('footer p', t.footer);
 
+  
+  // Update language label
+  setText('.language-label', t.language_label);
+
+  // Synchronize language selector
   const selector = document.getElementById('languageSelect');
-  if (selector && selector.value !== language) selector.value = language;
-  try { localStorage.setItem('portfolioLanguage', language); } catch (e) {}
-   setText('.language-label', t.language_label);
-   
-   const selector = document.getElementById('languageSelect');
-   if (selector && selector.value !== language) {
-       selector.value = language;
-   }
-   
-   try {
-       localStorage.setItem('portfolioLanguage', language);
-   } catch (e) {}
+
+  if (selector && selector.value !== language) {
+    selector.value = language;
+  }
+
+  // Save selected language
+  try {
+    localStorage.setItem('portfolioLanguage', language);
+  } catch (e) {
+    // Ignore storage errors
+  }
 }
 
 // Loading screen
