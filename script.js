@@ -109,7 +109,9 @@ function setTexts(selector, values) {
 }
 
 function applyLanguage(language) {
+   window.currentLang = 'en';
    const t = translations[language] || translations.en;
+   window.currentLang = language;
    document.documentElement.lang = language === 'zh' ? 'zh-Hant' : language;
    setText('#loader h1', t.loaderTitle);
    setText('#loader p', t.loaderText);
@@ -157,9 +159,11 @@ function applyLanguage(language) {
   // Save selected language
   try {
     localStorage.setItem('portfolioLanguage', language);
-  } catch (e) {
-    // Ignore storage errors
-  }
+  } catch (e) {}
+   
+   if (typeof renderProject === 'function') {
+    renderProject(0);
+   }
 }
 
 // Loading screen
