@@ -299,7 +299,7 @@ const projects = [
       zh: "參與雙輪自動導引車的電氣系統設計與控制程式開發。"
     },
     tags: ["AGV", "Electrical Design", "Programming"],
-    image: "assets/projects/agv-2w.jpg",
+    image: "assets/projects/agv-2w.JPG",
     link: "projects/agv-2w.html"
   },
   {
@@ -314,7 +314,7 @@ const projects = [
       zh: "參與 SCARA 機器人專案的程式開發與電氣系統設計。"
     },
     tags: ["Robotics", "Control", "Electrical Design"],
-    image: "assets/projects/scara.jpg",
+    image: "assets/projects/scara.JPG",
     link: "projects/scara.html"
   },
   {
@@ -329,7 +329,7 @@ const projects = [
       zh: "參與 Techman 工業機器人整合專案的程式開發與電氣系統設計。"
     },
     tags: ["Industrial Robotics", "Programming", "Automation"],
-    image: "assets/projects/techman.jpg",
+    image: "assets/projects/techman.JPG",
     link: "projects/techman.html"
   }
 ];
