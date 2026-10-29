@@ -800,3 +800,25 @@ footer { padding: 28px 20px; border-top: 1px solid var(--border); background: #f
         font-size: 11px;
     }
 }
+
+body {
+    background: #f6f6f8;
+    color: #18181b;
+}
+
+.contact-section {
+    background: transparent;
+}
+
+.contact-section .contact-card {
+    background: #ffffff;
+    border: 1px solid #dedee3;
+    border-radius: 24px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.025);
+}
+
+.site-footer {
+    background: transparent;
+    border-top: 1px solid #dedee3;
+    color: #71717a;
+}
