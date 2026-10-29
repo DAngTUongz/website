@@ -344,95 +344,50 @@
     <!-- Projects -->
     <!-- ========================= -->
 
-    <section id="projects">
-
-        <div class="section-title">
-
-            <h2>
-
-                Projects
-
-            </h2>
-
+    
+    <section id="projects" class="projects-section">
+      <div class="section-heading">
+        <h2 data-i18n="projectsTitle">Projects</h2>
+        <span class="heading-line"></span>
+      </div>
+    
+      <div class="project-slider" id="projectSlider">
+        <div class="project-content">
+          <span class="project-number" id="projectNumber">01 / 04</span>
+    
+          <h3 id="projectTitle">AGV Autonomous Robot</h3>
+    
+          <p class="project-description" id="projectDescription">
+            Design and development of an autonomous mobile robot.
+          </p>
+    
+          <div class="project-tags" id="projectTags"></div>
+    
+          <a href="#" class="project-button" id="projectLink">
+            View Project <span>↗</span>
+          </a>
+    
+          <div class="project-controls">
+            <button type="button" id="projectPrev"
+                    aria-label="Previous project">←</button>
+            <div class="project-dots" id="projectDots"></div>
+            <button type="button" id="projectNext"
+                    aria-label="Next project">→</button>
+          </div>
         </div>
-
-        <div class="project-grid">
-
-            <div class="project-card">
-
-                <img src="images/project1.png">
-
-                <h3>
-
-                    Temperature Controller
-
-                </h3>
-
-                <p>
-
-                    STM32 + LCD + EEPROM
-
-                </p>
-
+    
+        <a href="#" class="project-image-link" id="projectImageLink"
+           aria-label="View project details">
+          <div class="project-image-frame">
+            <img id="projectImage" src="" alt="Project image">
+            <div class="project-image-overlay">
+              <span>View details ↗</span>
             </div>
-
-            <div class="project-card">
-
-                <img src="images/project2.png">
-
-                <h3>
-
-                    ESP32 Smart Home
-
-                </h3>
-
-                <p>
-
-                    IoT + WiFi + Google Sheets
-
-                </p>
-
-            </div>
-
-            <div class="project-card">
-
-                <img src="images/project3.png">
-
-                <h3>
-
-                    Minecraft Server
-
-                </h3>
-
-                <p>
-
-                    PaperMC + Plugins
-
-                </p>
-
-            </div>
-
-            <div class="project-card">
-
-                <img src="images/project4.png">
-
-                <h3>
-
-                    Legacy Launcher Guide
-
-                </h3>
-
-                <p>
-
-                    Tutorial Website
-
-                </p>
-
-            </div>
-
-        </div>
-
+          </div>
+        </a>
+      </div>
     </section>
+
 
     <!-- ========================= -->
     <!-- Statistics -->
