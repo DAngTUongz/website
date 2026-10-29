@@ -5,13 +5,21 @@
 
 const translations = {
   en: {
-    language_label: "Language",
-    loaderTitle: 'DangTuong', loaderText: 'Loading Portfolio...',
-    nav: ['Home', 'About', 'Skills', 'Projects', 'Contact'],
-    hello: "Hello, I'm", role: 'Embedded Systems Developer',
-    description: 'Passionate about Embedded Systems, IoT, PLC, Automation, and Web Development.',
-    projectsButton: 'View Projects', aboutTitle: 'About Me',
-    about: [
+     //
+      language_label: "Language",
+      loaderTitle: 'DangTuong', loaderText: 'Loading Portfolio...',
+      nav: ['Home', 'About', 'Skills', 'Projects', 'Contact'],
+      hello: "Hello, I'm", role: 'Embedded Systems Developer',
+      description: 'Passionate about Embedded Systems, IoT, PLC, Automation, and Web Development.',
+      projectsButton: 'View Projects', aboutTitle: 'About Me',
+      contactEyebrow: 'CONTACT',
+      contactHeading: "Let's work together?",
+      contactDescription: 'I would love to discuss job opportunities and technical projects.',
+      contactButton: 'Email me',
+      phoneLabel: 'PHONE',
+      phoneValue: 'Update phone number',
+      footerRole: 'Embedded Systems Developer',
+      about: [
       'Welcome to my portfolio website.',
       'I enjoy building embedded systems, automation solutions, and web applications.',
       'Most of my projects involve STM32, ESP32, Arduino, PLC programming, communication protocols, and modern web technologies.'
@@ -23,13 +31,21 @@ const translations = {
     footer: '© 2026 DangTuong. All Rights Reserved.', languageLabel: 'Language'
   },
   vi: {
-    language_label: "Ngôn ngữ",
-    loaderTitle: 'DangTuong', loaderText: 'Đang tải Portfolio...',
-    nav: ['Trang chủ', 'Giới thiệu', 'Kỹ năng', 'Dự án', 'Liên hệ'],
-    hello: 'Xin chào, tôi là', role: 'Lập trình viên hệ thống nhúng',
-    description: 'Đam mê hệ thống nhúng, IoT, PLC, tự động hóa và phát triển web.',
-    projectsButton: 'Xem dự án', aboutTitle: 'Giới thiệu',
-    about: [
+     //
+      language_label: "Ngôn ngữ",
+      loaderTitle: 'DangTuong', loaderText: 'Đang tải Portfolio...',
+      nav: ['Trang chủ', 'Giới thiệu', 'Kỹ năng', 'Dự án', 'Liên hệ'],
+      hello: 'Xin chào, tôi là', role: 'Lập trình viên hệ thống nhúng',
+      description: 'Đam mê hệ thống nhúng, IoT, PLC, tự động hóa và phát triển web.',
+      projectsButton: 'Xem dự án', aboutTitle: 'Giới thiệu',
+      contactEyebrow: 'LIÊN HỆ',
+      contactHeading: 'Cùng hợp tác nhé?',
+      contactDescription: 'Rất vui được trao đổi về cơ hội việc làm và các dự án kỹ thuật.',
+      contactButton: 'Gửi email cho tôi',
+      phoneLabel: 'ĐIỆN THOẠI',
+      phoneValue: 'Cập nhật số điện thoại',
+      footerRole: 'Lập trình viên hệ thống nhúng',
+      about: [
       'Chào mừng bạn đến với website portfolio của tôi.',
       'Tôi yêu thích phát triển hệ thống nhúng, giải pháp tự động hóa và ứng dụng web.',
       'Các dự án của tôi chủ yếu liên quan đến STM32, ESP32, Arduino, lập trình PLC, giao thức truyền thông và công nghệ web hiện đại.'
@@ -41,13 +57,20 @@ const translations = {
     footer: '© 2026 DangTuong. Bảo lưu mọi quyền.', languageLabel: 'Ngôn ngữ'
   },
   zh: {
-    language_label: "語言",
-    loaderTitle: 'DangTuong', loaderText: '作品集載入中...',
-    nav: ['首頁', '關於我', '技能', '專案', '聯絡我'],
-    hello: '你好，我是', role: '嵌入式系統開發者',
-    description: '熱衷於嵌入式系統、物聯網、PLC、自動化與網頁開發。',
-    projectsButton: '查看專案', aboutTitle: '關於我',
-    about: [
+      language_label: "語言",
+      loaderTitle: 'DangTuong', loaderText: '作品集載入中...',
+      nav: ['首頁', '關於我', '技能', '專案', '聯絡我'],
+      hello: '你好，我是', role: '嵌入式系統開發者',
+      description: '熱衷於嵌入式系統、物聯網、PLC、自動化與網頁開發。',
+      projectsButton: '查看專案', aboutTitle: '關於我',
+      contactEyebrow: '聯絡我',
+      contactHeading: '一起合作吧？',
+      contactDescription: '歡迎與我交流工作機會及技術專案。',
+      contactButton: '寄送電子郵件',
+      phoneLabel: '電話',
+      phoneValue: '請更新電話號碼',
+      footerRole: '嵌入式系統開發者',
+      about: [
       '歡迎來到我的個人作品集網站。',
       '我喜歡開發嵌入式系統、自動化解決方案與網頁應用程式。',
       '我的專案主要涉及 STM32、ESP32、Arduino、PLC 程式設計、通訊協定與現代網頁技術。'
@@ -71,16 +94,26 @@ function setTexts(selector, values) {
 }
 
 function applyLanguage(language) {
-  const t = translations[language] || translations.en;
-  document.documentElement.lang = language === 'zh' ? 'zh-Hant' : language;
-  setText('#loader h1', t.loaderTitle);
-  setText('#loader p', t.loaderText);
-  setTexts('nav ul li a', t.nav);
-  setText('.hero .hello', t.hello);
-  setText('.hero h1', 'Dang Tuong');
-  setText('.hero h2', t.role);
-  setText('.hero .description', t.description);
-  setText('.hero .buttons .btn', t.projectsButton);
+   const t = translations[language] || translations.en;
+   document.documentElement.lang = language === 'zh' ? 'zh-Hant' : language;
+   setText('#loader h1', t.loaderTitle);
+   setText('#loader p', t.loaderText);
+   setTexts('nav ul li a', t.nav);
+   setText('.hero .hello', t.hello);
+   setText('.hero h1', 'Dang Tuong');
+   setText('.hero h2', t.role);
+   setText('.hero .description', t.description);
+   setText('.hero .buttons .btn', t.projectsButton);
+   setText('.contact-eyebrow', t.contactEyebrow);
+   setText('.contact-heading', t.contactHeading);
+   setText('.contact-description', t.contactDescription);
+   setText('.contact-button', t.contactButton);
+   setText('.contact-label', t.emailTitle);
+   setText('.contact-item:nth-child(2) .contact-label', t.phoneLabel);
+   setText('.contact-item:nth-child(2) a', t.phoneValue);
+   setText('.site-footer p:last-child', t.footerRole);
+   setText('.language-label', t.languageLabel);
+
 
   const sectionTitles = document.querySelectorAll('.section-title h2');
   if (sectionTitles[0]) sectionTitles[0].textContent = t.aboutTitle;
