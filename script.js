@@ -202,3 +202,109 @@ if (avatar && window.matchMedia('(hover: hover)').matches) {
 
 document.body.classList.add('fade');
 console.log('%cWelcome to DangTuong Portfolio', 'color:#18181b;font-size:18px;font-weight:bold;');
+
+
+/* =========================================
+   CUSTOM LANGUAGE DROPDOWN
+========================================= */
+
+const languageSwitcher =
+    document.getElementById("languageSwitcher");
+
+const languageToggle =
+    document.getElementById("languageToggle");
+
+const languageMenu =
+    document.getElementById("languageMenu");
+
+const selectedLanguage =
+    document.getElementById("selectedLanguage");
+
+const languageSelect =
+    document.getElementById("languageSelect");
+
+if (
+    languageSwitcher &&
+    languageToggle &&
+    languageMenu &&
+    selectedLanguage &&
+    languageSelect
+) {
+    const options = languageMenu.querySelectorAll(
+        ".language-option"
+    );
+
+    const languageNames = {
+        en: "English",
+        vi: "Tiếng Việt",
+        zh: "繁體中文"
+    };
+
+    function closeLanguageMenu() {
+        languageSwitcher.classList.remove("open");
+        languageToggle.setAttribute("aria-expanded", "false");
+    }
+
+    languageToggle.addEventListener("click", () => {
+        const isOpen =
+            languageSwitcher.classList.toggle("open");
+
+        languageToggle.setAttribute(
+            "aria-expanded",
+            String(isOpen)
+        );
+    });
+
+    function syncLanguageUI(lang) {
+        selectedLanguage.textContent =
+            languageNames[lang] || "English";
+
+        options.forEach(option => {
+            const isActive = option.dataset.lang === lang;
+
+            option.classList.toggle("active", isActive);
+            option.setAttribute(
+                "aria-selected",
+                String(isActive)
+            );
+        });
+    }
+
+    options.forEach(option => {
+        option.addEventListener("click", () => {
+            const lang = option.dataset.lang;
+
+            languageSelect.value = lang;
+
+            // Trigger the existing translation handler
+            languageSelect.dispatchEvent(
+                new Event("change", { bubbles: true })
+            );
+
+            syncLanguageUI(lang);
+            closeLanguageMenu();
+        });
+    });
+
+    // Close when clicking outside
+    document.addEventListener("click", event => {
+        if (!languageSwitcher.contains(event.target)) {
+            closeLanguageMenu();
+        }
+    });
+
+    // Close with Escape
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+            closeLanguageMenu();
+            languageToggle.focus();
+        }
+    });
+
+    // Keep the custom menu synchronized with the select
+    languageSelect.addEventListener("change", () => {
+        syncLanguageUI(languageSelect.value);
+    });
+
+    syncLanguageUI(languageSelect.value || "en");
+}
