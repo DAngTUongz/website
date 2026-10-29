@@ -106,7 +106,7 @@ function applyLanguage(language) {
    setText('#loader p', t.loaderText);
    setTexts('nav ul li a', t.nav);
    setText('.hero .hello', t.hello);
-   setText('.hero h1', 'Dang Tuong');
+   setText('.hero h1', t.name);
    setText('.hero h2', t.role);
    setText('.hero .description', t.description);
    setText('.hero .buttons .btn', t.projectsButton);
