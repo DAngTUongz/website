@@ -266,6 +266,225 @@ if (avatar && window.matchMedia('(hover: hover)').matches) {
 });
 
 document.body.classList.add('fade');
+
+const projects = [
+  {
+    title: {
+      vi: "Xe tự hành AGV 4 bánh",
+      en: "Four-Wheel Autonomous AGV",
+      zh: "四輪自動導引車"
+    },
+    description: {
+      vi: "Tham gia phát triển robot AGV 4 bánh do nhóm tự thiết kế, tập trung vào hệ thống điện và điều khiển chuyển động.",
+      en: "Contributed to a team-designed four-wheel AGV, focusing on electrical systems and motion control.",
+      zh: "參與團隊自主設計的四輪自動導引車專案，負責電氣系統與運動控制相關工作。"
+    },
+    tags: ["AGV", "Embedded Systems", "Motor Control"],
+    image: "assets/projects/agv-4w.jpg",
+    link: "projects/agv-4w.html"
+  },
+  {
+    title: {
+      vi: "Xe tự hành AGV 2 bánh",
+      en: "Two-Wheel Autonomous AGV",
+      zh: "雙輪自動導引車"
+    },
+    description: {
+      vi: "Tham gia thiết kế hệ thống điện và lập trình điều khiển cho nền tảng AGV 2 bánh.",
+      en: "Contributed to electrical system design and control programming for a two-wheel AGV.",
+      zh: "參與雙輪自動導引車的電氣系統設計與控制程式開發。"
+    },
+    tags: ["AGV", "Electrical Design", "Programming"],
+    image: "assets/projects/agv-2w.jpg",
+    link: "projects/agv-2w.html"
+  },
+  {
+    title: {
+      vi: "Robot SCARA",
+      en: "SCARA Robot",
+      zh: "SCARA 機器人"
+    },
+    description: {
+      vi: "Tham gia lập trình và thiết kế hệ thống điện cho dự án robot SCARA.",
+      en: "Contributed to robot programming and electrical system design for a SCARA robot project.",
+      zh: "參與 SCARA 機器人專案的程式開發與電氣系統設計。"
+    },
+    tags: ["Robotics", "Control", "Electrical Design"],
+    image: "assets/projects/scara.jpg",
+    link: "projects/scara.html"
+  },
+  {
+    title: {
+      vi: "Robot Techman",
+      en: "Techman Robot",
+      zh: "Techman 機器人"
+    },
+    description: {
+      vi: "Tham gia lập trình và thiết kế hệ thống điện trong dự án tích hợp robot công nghiệp Techman.",
+      en: "Contributed to programming and electrical system design for an industrial Techman robot integration project.",
+      zh: "參與 Techman 工業機器人整合專案的程式開發與電氣系統設計。"
+    },
+    tags: ["Industrial Robotics", "Programming", "Automation"],
+    image: "assets/projects/techman.jpg",
+    link: "projects/techman.html"
+  }
+];
+
+const slider = document.getElementById("projectSlider");
+
+if (slider) {
+  const titleEl = document.getElementById("projectTitle");
+  const descriptionEl = document.getElementById("projectDescription");
+  const numberEl = document.getElementById("projectNumber");
+  const tagsEl = document.getElementById("projectTags");
+  const imageEl = document.getElementById("projectImage");
+  const imageLink = document.getElementById("projectImageLink");
+  const projectLink = document.getElementById("projectLink");
+  const dotsEl = document.getElementById("projectDots");
+  const prevBtn = document.getElementById("projectPrev");
+  const nextBtn = document.getElementById("projectNext");
+
+  let currentIndex = 0;
+  let timer = null;
+  let isPaused = false;
+  let isChanging = false;
+
+  // Sử dụng biến ngôn ngữ của website nếu đã có.
+  function getProjectLanguage() {
+    const lang = window.currentLang || document.documentElement.lang || "vi";
+    return ["vi", "en", "zh"].includes(lang) ? lang : "vi";
+  }
+
+  function renderProject(index) {
+    currentIndex = (index + projects.length) % projects.length;
+
+    const project = projects[currentIndex];
+    const lang = getProjectLanguage();
+
+    slider.classList.add("is-changing");
+    isChanging = true;
+
+    titleEl.textContent = project.title[lang];
+    descriptionEl.textContent = project.description[lang];
+    numberEl.textContent =
+      `${String(currentIndex + 1).padStart(2, "0")} / ${String(projects.length).padStart(2, "0")}`;
+
+    tagsEl.replaceChildren();
+
+    project.tags.forEach(tag => {
+      const span = document.createElement("span");
+      span.textContent = tag;
+      tagsEl.appendChild(span);
+    });
+
+    imageEl.alt = project.title[lang];
+    imageLink.href = project.link;
+    projectLink.href = project.link;
+
+    const dots = dotsEl.querySelectorAll(".project-dot");
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === currentIndex);
+      dot.setAttribute("aria-current", i === currentIndex ? "true" : "false");
+    });
+
+    imageEl.onload = () => {
+      slider.classList.remove("is-changing");
+      isChanging = false;
+    };
+
+    imageEl.onerror = () => {
+      slider.classList.remove("is-changing");
+      isChanging = false;
+      console.warn("Không tải được ảnh dự án:", project.image);
+    };
+
+    imageEl.src = project.image;
+
+    // Đảm bảo hiệu ứng không bị kẹt khi dùng ảnh đã được cache.
+    if (imageEl.complete) {
+      slider.classList.remove("is-changing");
+      isChanging = false;
+    }
+  }
+
+  projects.forEach((project, index) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "project-dot";
+    dot.setAttribute("aria-label", `Go to project ${index + 1}`);
+
+    dot.addEventListener("click", () => {
+      renderProject(index);
+      restartAutoplay();
+    });
+
+    dotsEl.appendChild(dot);
+  });
+
+  function stopAutoplay() {
+    clearInterval(timer);
+    timer = null;
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+
+    if (isPaused || projects.length < 2) return;
+
+    timer = setInterval(() => {
+      if (!isChanging && !document.hidden) {
+        renderProject(currentIndex + 1);
+      }
+    }, 5000);
+  }
+
+  function restartAutoplay() {
+    startAutoplay();
+  }
+
+  function pauseAutoplay() {
+    isPaused = true;
+    stopAutoplay();
+  }
+
+  function resumeAutoplay() {
+    isPaused = false;
+    startAutoplay();
+  }
+
+  prevBtn.addEventListener("click", () => {
+    renderProject(currentIndex - 1);
+    restartAutoplay();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    renderProject(currentIndex + 1);
+    restartAutoplay();
+  });
+
+  // Dừng khi chuột ở trên ảnh; tiếp tục khi chuột rời ảnh.
+  imageLink.addEventListener("mouseenter", pauseAutoplay);
+  imageLink.addEventListener("mouseleave", resumeAutoplay);
+
+  // Hỗ trợ bàn phím và màn hình cảm ứng.
+  imageLink.addEventListener("focus", pauseAutoplay);
+  imageLink.addEventListener("blur", resumeAutoplay);
+
+  slider.addEventListener("touchstart", pauseAutoplay, { passive: true });
+  slider.addEventListener("touchend", resumeAutoplay, { passive: true });
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) stopAutoplay();
+    else startAutoplay();
+  });
+
+  // Cho phép gọi lại sau khi đổi ngôn ngữ.
+  window.refreshProjectLanguage = () => renderProject(currentIndex);
+
+  renderProject(0);
+  startAutoplay();
+}
+
 console.log('%cWelcome to DangTuong Portfolio', 'color:#18181b;font-size:18px;font-weight:bold;');
 
 
@@ -278,8 +497,6 @@ const languageSwitcher = document.getElementById("languageSwitcher");
 const languageToggle = document.getElementById("languageToggle");
 
 const languageMenu = document.getElementById("languageMenu");
-
-const selectedLanguage = document.getElementById("selectedLanguage");
 
 if (
     languageSwitcher &&
