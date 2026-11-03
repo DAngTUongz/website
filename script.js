@@ -8,7 +8,7 @@ const translations = {
      //
       language_label: "Language",
       loaderTitle: 'DangTuong', loaderText: 'Loading Portfolio...',
-      nav: ['Home', 'About', 'Skills', 'Projects', 'Contact'],
+      nav: ['Home', 'About', 'Skills', 'Projects', 'Certificates', 'Contact'],
       hello: "Hello, I'm",
       name: "Dang Ngoc Tuong",
       role: 'Embedded Systems Developer',
@@ -39,7 +39,7 @@ const translations = {
      //
       language_label: "Ngôn ngữ",
       loaderTitle: 'DangTuong', loaderText: 'Đang tải Portfolio...',
-      nav: ['Trang chủ', 'Giới thiệu', 'Kỹ năng', 'Dự án', 'Liên hệ'],
+      nav: ['Trang chủ', 'Giới thiệu', 'Kỹ năng', 'Dự án', 'Chứng chỉ', 'Liên hệ'],
       hello: 'Xin chào, tôi là',
       name: "Đặng Ngọc Tưởng",
       role: 'Lập trình viên hệ thống nhúng',
@@ -69,7 +69,7 @@ const translations = {
   zh: {
       language_label: "語言",
       loaderTitle: 'DangTuong', loaderText: '作品集載入中...',
-      nav: ['首頁', '關於我', '技能', '專案', '聯絡我'],
+      nav: ['首頁', '關於我', '技能', '專案', '證書', '聯絡我'],
       hello: '你好，我是',
       name: "鄧玉祥",
       role: '嵌入式系統開發者',
