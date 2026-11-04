@@ -59,7 +59,6 @@
 
     date: "2025"
   }
-];
 
     /*
     // Copy this object to add another certificate:
