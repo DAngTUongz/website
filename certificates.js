@@ -4,20 +4,62 @@
 
   // Place PDFs in assets/certificates/ and use their exact filenames below.
   const CERTIFICATE_ITEMS = [
-    {
-      id: "certificate-01",
-      category: "certificate", // "certificate" or "award"
-      file: "assets/certificates/certificate-01.pdf",
-      image: "", // Optional preview: assets/certificates/certificate-01.jpg
-      title: { vi: "Tên chứng chỉ", en: "Certificate title", zh: "證書名稱" },
-      description: {
-        vi: "Mô tả ngắn về chứng chỉ này.",
-        en: "A short description of this certificate.",
-        zh: "此證書的簡短說明。"
-      },
-      issuer: { vi: "Đơn vị cấp", en: "Issuing organization", zh: "頒發單位" },
-      date: "2026"
-    }
+  {
+    id: "certificate-01",
+    category: "certificate",
+
+    file: "assets/certificates/certificate-01.pdf",
+    image: "assets/certificates/certificate-01.jpg",
+
+    title: {
+      vi: "SOLIDWORKS Associate – Mechanical Design",
+      en: "SOLIDWORKS Associate – Mechanical Design",
+      zh: "SOLIDWORKS 機械設計助理認證"
+    },
+
+    description: {
+      vi: "Chứng chỉ chuyên môn về thiết kế cơ khí trên phần mềm SOLIDWORKS, do Dassault Systèmes cấp.",
+      en: "Professional certification in mechanical design using SOLIDWORKS, awarded by Dassault Systèmes.",
+      zh: "由 Dassault Systèmes 頒發的 SOLIDWORKS 機械設計專業認證。"
+    },
+
+    issuer: {
+      vi: "Dassault Systèmes",
+      en: "Dassault Systèmes",
+      zh: "Dassault Systèmes"
+    },
+
+    date: "2023"
+  },
+
+  {
+    id: "certificate-02",
+    category: "certificate",
+
+    file: "assets/certificates/certificate-02.pdf",
+    image: "assets/certificates/certificate-02.jpg",
+
+    title: {
+      vi: "Chứng chỉ năng lực Hoa ngữ TOCFL – Level 1",
+      en: "Test of Chinese as a Foreign Language (TOCFL) – Level 1",
+      zh: "華語文能力測驗（TOCFL）入門級"
+    },
+
+    description: {
+      vi: "Đạt tổng điểm 875. Kỹ năng nghe: A2; kỹ năng đọc: A1. Kỳ thi ngày 09/11/2025.",
+      en: "Total score: 875. Listening: A2; Reading: A1. Test date: November 9, 2025.",
+      zh: "總分 875 分。聽力：A2；閱讀：A1。考試日期：2025 年 11 月 9 日。"
+    },
+
+    issuer: {
+      vi: "Steering Committee for the Test of Proficiency – TOCFL",
+      en: "Steering Committee for the Test of Proficiency – TOCFL",
+      zh: "國家華語測驗推動工作委員會"
+    },
+
+    date: "2025"
+  }
+];
 
     /*
     // Copy this object to add another certificate:
