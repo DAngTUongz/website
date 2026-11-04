@@ -25,17 +25,20 @@
     </ul></nav>
     <div class="language-switcher" id="languageSwitcher">
       <span class="language-label" data-i18n="language_label">Language</span>
-      <button type="button" class="language-toggle" id="languageToggle" aria-expanded="false" aria-haspopup="listbox"><span id="selectedLanguage">English</span><i class="fa-solid fa-chevron-down"></i></button>
+      <button type="button" class="language-toggle" id="languageToggle" aria-expanded="false" aria-haspopup="listbox">
+        <span id="selectedLanguage">English</span><i class="fa-solid fa-chevron-down"></i>
+      </button>
       <div class="language-menu" id="languageMenu" role="listbox">
         <button type="button" class="language-option active" data-lang="en" role="option">English</button>
         <button type="button" class="language-option" data-lang="vi" role="option">Tiếng Việt</button>
         <button type="button" class="language-option" data-lang="zh" role="option">中文</button>
       </div>
-      <select id="languageSelect" class="language-native-select" aria-label="Select website language" tabindex="-1"><option value="en">English</option><option value="vi">Tiếng Việt</option><option value="zh">中文</option></select>
+      <select id="languageSelect" class="language-native-select" aria-label="Select website language" tabindex="-1">
+        <option value="en">English</option><option value="vi">Tiếng Việt</option><option value="zh">中文</option>
+      </select>
     </div>
     <div class="menu-btn"><i class="fa-solid fa-bars"></i></div>
   </header>
-
   <main>
     <section class="certificates-hero">
       <p class="certificates-eyebrow" data-cert="eyebrow">MY JOURNEY</p>
@@ -45,25 +48,19 @@
     <section class="certificates-main">
       <div class="certificate-toolbar">
         <div class="certificate-filters" role="group" aria-label="Filter certificates">
-          <button class="certificate-filter active" data-filter="all" data-cert="all">All</button>
-          <button class="certificate-filter" data-filter="certificate" data-cert="certificates">Certificates</button>
-          <button class="certificate-filter" data-filter="award" data-cert="awards">Awards & Achievements</button>
+          <button type="button" class="certificate-filter active" data-filter="all" data-cert="all">All</button>
+          <button type="button" class="certificate-filter" data-filter="certificate" data-cert="certificates">Certificates</button>
+          <button type="button" class="certificate-filter" data-filter="award" data-cert="awards">Awards & Achievements</button>
         </div>
-        <span class="certificate-count" data-cert="count">0 items</span>
+        <span class="certificate-count" id="certificateCount">0 items</span>
       </div>
-      <div class="certificate-grid" id="certificateGrid">
-        <article class="certificate-card" data-category="certificate">
-          <div class="certificate-preview"><i class="fa-regular fa-file-lines"></i><span>Image / PDF will be added</span></div>
-          <div class="certificate-info"><span class="certificate-category">Certificate</span><h3 data-cert="placeholderCertificate">Certificate title</h3><p data-cert="placeholderDesc">Add the certificate image or PDF and its details here later.</p><div class="certificate-meta"><span data-cert="issuer">Issuing organization</span><span>—</span></div></div>
-        </article>
-        <article class="certificate-card" data-category="award">
-          <div class="certificate-preview"><i class="fa-solid fa-award"></i><span>Image / PDF will be added</span></div>
-          <div class="certificate-info"><span class="certificate-category">Award</span><h3 data-cert="placeholderAward">Award / achievement title</h3><p data-cert="placeholderAwardDesc">Add the award image or supporting document and details here later.</p><div class="certificate-meta"><span data-cert="issuer">Organizing organization</span><span>—</span></div></div>
-        </article>
-      </div>
+      <div class="certificate-grid" id="certificateGrid" aria-live="polite"></div>
     </section>
   </main>
-  <footer class="site-footer"><p>© 2026 DangTuong. All Rights Reserved</p><p>Embedded Systems Developer</p></footer>
+  <footer class="site-footer">
+    <p>© 2026 DangTuong. All Rights Reserved</p>
+    <p>Embedded Systems Developer</p>
+  </footer>
   <script src="script.js"></script>
   <script src="certificates.js"></script>
 </body>
