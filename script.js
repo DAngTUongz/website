@@ -132,11 +132,11 @@ function applyLanguage(language) {
    setText('.language-label', t.languageLabel);
 
 
-  const sectionTitles = document.querySelectorAll('.section-title h2');
-  if (sectionTitles[0]) sectionTitles[0].textContent = t.aboutTitle;
-  if (sectionTitles[1]) sectionTitles[1].textContent = t.skillsTitle;
-  if (sectionTitles[2]) sectionTitles[2].textContent = t.projectsTitle;
-  if (sectionTitles[3]) sectionTitles[3].textContent = t.contactTitle;
+  // Translate section titles using their section IDs
+   setText('#about .section-title h2', t.aboutTitle);
+   setText('#skills .section-title h2', t.skillsTitle);
+   setText('#projects .section-title h2', t.projectsTitle);
+   setText('#contact .section-title h2', t.contactTitle);
 
   setTexts('#about .about-content p', t.about);
   setTexts('.project-card h3', t.projectNames);
